@@ -50,3 +50,7 @@ C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialo
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.xml
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Razor.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\EntityFramework.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\EntityFramework.SqlServer.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\EntityFramework.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\EntityFramework.SqlServer.xml

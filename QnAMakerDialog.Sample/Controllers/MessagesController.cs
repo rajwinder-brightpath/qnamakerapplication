@@ -5,15 +5,19 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System.Linq;
 
 namespace QnAMakerDialog.Sample
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+
         internal static IDialog<object> MakeRoot()
         {
-            return Chain.From(() => new Dialogs.QnADialog());
+            
+            return Chain.From(() => new Dialogs.QnADialog("16c5a1e70abf426aa3b3f97604b292da", "5ab0bc00-b599-4bbd-bc9d-ff81611949aa"));
+         
         }
 
         /// <summary>
@@ -22,11 +26,32 @@ namespace QnAMakerDialog.Sample
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+
+            System.Web.Script.Serialization.JavaScriptSerializer json = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string jsonstring =json.Serialize(activity);
+             
+
+            //using (var db = new QnaApplicationEntities())
+            //{
+
+            //    IQueryable <qnadialogtable> ret = from x in db.qnadialogtables
+            //                select x;
+
+
+            //    ret.ToList();
+
+
+            //}
             if (activity.Type == ActivityTypes.Message)
             {
                 try
                 {
-                    await Conversation.SendAsync(activity, MakeRoot);
+                    ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                    Activity replyMessage = activity.CreateReply(jsonstring);
+                    
+                    await connector.Conversations.ReplyToActivityAsync(replyMessage);
+                    //await Conversation.SendAsync(activity, MakeRoot);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -35,6 +60,7 @@ namespace QnAMakerDialog.Sample
             }
             else
             {
+              
                 HandleSystemMessage(activity);
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);

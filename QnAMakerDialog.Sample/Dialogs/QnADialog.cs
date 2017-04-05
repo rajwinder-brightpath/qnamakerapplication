@@ -5,9 +5,38 @@ using Microsoft.Bot.Builder.Dialogs;
 namespace QnAMakerDialog.Sample.Dialogs
 {
     [Serializable]
-    [QnAMakerService("16c5a1e70abf426aa3b3f97604b292da", "5ab0bc00-b599-4bbd-bc9d-ff81611949aa")]
+    //[QnAMakerService("16c5a1e70abf426aa3b3f97604b292da", "5ab0bc00-b599-4bbd-bc9d-ff81611949aa")]
     public class QnADialog : QnAMakerDialog<object>
     {
+        public QnADialog(string subskey,string kbid)
+        {
+            base.SubscriptionKey = subskey;
+            base.KnowledgeBaseId = kbid;
+        }
+        //public string InitialMessage;
+
+        //public override async Task StartAsync(IDialogContext context)
+        //{
+        //    var type = this.GetType();
+        //    //  var qNaServiceAttribute = type.GetCustomAttributes<QnAMakerServiceAttribute>().FirstOrDefault();
+        //    using (var db = new QnaApplicationEntities())
+        //    {
+
+        //        var query = db.qnadialogtables<Order>();
+        //    }
+        //    subscriptionKey = qNaServiceAttribute.SubscriptionKey;
+        //    knowledgeBaseId = qNaServiceAttribute.KnowledgeBaseId;
+
+
+        //    if (!string.IsNullOrEmpty(InitialMessage))
+        //    {
+        //        await HandleMessage(context, InitialMessage);
+        //    }
+        //    else
+        //    {
+        //        context.Wait(MessageReceived);
+        //    }
+        //}
         /// <summary>
         /// Handler used when the QnAMaker finds no appropriate answer
         /// </summary>
