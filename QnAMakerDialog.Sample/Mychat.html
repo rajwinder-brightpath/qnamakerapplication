@@ -1,0 +1,80 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Bot Chat Embed Test</title>
+    <link href="Dialogs/botchat.css" rel="stylesheet" />
+    <style>
+        .wc-chatview-panel {
+            width: 320px;
+            height: 500px;
+            position: relative;
+        }
+    </style>
+    <style>
+        .wc-console input {
+        color:red !important;
+        border:2px solid red !important;
+    }
+        .wc-message-from-me {
+            background-color:red  !important;
+        }
+        .wc-message-from-bot {
+            background-color: black;
+            color: white;
+        }
+            .wc-message-from-bot .wc-message-content {
+                 background-color: yellow;
+                 color: black;
+            }
+        .wc-upload label {
+           display:none;
+        }
+        /*.wc-console label {
+            display:none;
+        }*/
+    </style>
+   
+</head>
+<body>
+    <div style="margin-left: 320px" id="BotChatElement" />
+    <div style="clear:both;" />
+    <script src="https://unpkg.com/botframework-webchat/botchat.js"></script>
+    <script>
+        var model = {
+  "userId": "4p1MLkvEnwG",
+  "userName": "You",
+  "botId": "qnaApplicationbot",
+  "botIconUrl": "//bot-framework.azureedge.net/bot-icons-v1/bot-framework-default-2.png",
+  "botName": "qnabot",
+  "secret": "TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I",
+  "iconUrl": "//bot-framework.azureedge.net/bot-icons-v1/bot-framework-default-2.png",
+  "directLineUrl": "https://webchat.botframework.com/v3/directline",
+  "webSocketEnabled": "false"
+};
+    </script>
+    <script>
+        BotChat.App({
+            directLine: {
+                secret: model.secret,
+                token: model.token,
+                domain: model.directLineUrl,
+                webSocket: false
+            },
+            user: { id: model.userId, name: model.userName },
+            bot: { id: model.botId, name: model.botName },
+            resize: 'window'
+        }, document.getElementById("BotChatElement"));
+
+    </script>
+    <script>
+        $('#BotChatElement').contents().find('#red').hide();
+        //$('iframe').load(function () {
+        //    $('iframe').contents().find("body")
+        //      .append($("<style type='text/css'>  .wc-upload{display:none;}  </style>"));
+        //});
+       //  $('#BotChatElement').contents().find('div #wc-upload-input').remove(); 
+       // $("#wc-upload-input").css('display', 'none');
+    </script>
+
+</body>
+</html>

@@ -37,3 +37,16 @@ C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialo
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\obj\Debug\QnAMakerDialog.Sample.csprojResolveAssemblyReference.cache
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\obj\Debug\QnAMakerDialog.Sample.dll
 C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\obj\Debug\QnAMakerDialog.Sample.pdb
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Helpers.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Mvc.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Razor.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Razor.dll
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Helpers.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Mvc.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.Razor.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog.Sample\bin\System.Web.WebPages.Razor.xml

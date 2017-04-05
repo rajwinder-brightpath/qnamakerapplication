@@ -1,0 +1,1 @@
+C:\Users\Desktop\Downloads\botframework-master\botframework-master\QnAMakerDialog\QnAMakerDialog\obj\Debug\QnAMakerDialog.csprojResolveAssemblyReference.cache

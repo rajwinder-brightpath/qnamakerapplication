@@ -1,0 +1,19 @@
+﻿@model QnAMakerDialog.QnAMakerResult
+
+<h2>Direct Line Bot Example</h2>
+
+@using (Html.BeginForm("SmsRequest", "SMS", FormMethod.Post))
+{
+    <p>
+        @*Hello: @((User.Identity.IsAuthenticated == true)
+            ? User.Identity.Name
+            : "[Unknown]")*@
+        Hello:
+    </p>
+    @Html.TextBoxFor(m => m.ChatMessage,
+    new { style = "width:600px" })
+    <input type="submit" value="Send" />
+}
+<br />
+<p>@Html.Raw(Model.ChatResponse)<
+ 
