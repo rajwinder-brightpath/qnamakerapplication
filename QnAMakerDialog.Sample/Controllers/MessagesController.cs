@@ -29,13 +29,14 @@ namespace QnAMakerDialog.Sample
 
             System.Web.Script.Serialization.JavaScriptSerializer json = new System.Web.Script.Serialization.JavaScriptSerializer();
             string jsonstring =json.Serialize(activity);
-             
+
 
             //using (var db = new QnaApplicationEntities())
             //{
 
             //    IQueryable <qnadialogtable> ret = from x in db.qnadialogtables
-            //                select x;
+            //                select x
+            //where x.Source =1;
 
 
             //    ret.ToList();
@@ -48,7 +49,7 @@ namespace QnAMakerDialog.Sample
                 {
                     ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
                     Activity replyMessage = activity.CreateReply(jsonstring);
-                    
+
                     await connector.Conversations.ReplyToActivityAsync(replyMessage);
                     //await Conversation.SendAsync(activity, MakeRoot);
                     

@@ -49,7 +49,8 @@
   "secret": "TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I",
   "iconUrl": "//bot-framework.azureedge.net/bot-icons-v1/bot-framework-default-2.png",
   "directLineUrl": "https://webchat.botframework.com/v3/directline",
-  "webSocketEnabled": "false"
+  "webSocketEnabled": "false",
+            "source":"raj"
 };
     </script>
     <script>
@@ -58,10 +59,11 @@
                 secret: model.secret,
                 token: model.token,
                 domain: model.directLineUrl,
-                webSocket: false
+                webSocket: false,
+                source:model.source
             },
-            user: { id: model.userId, name: model.userName },
-            bot: { id: model.botId, name: model.botName },
+            user: { id: model.userId, name: model.source, source: model.so },
+            bot: { id: model.botId, name: model.botName, source:model.source },
             resize: 'window'
         }, document.getElementById("BotChatElement"));
 
