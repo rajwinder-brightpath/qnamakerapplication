@@ -11,7 +11,7 @@ namespace QnAMakerDialog.Sample.Dialogs
         public QnADialog(string subskey,string kbid)
         {
             base.SubscriptionKey = subskey;
-            base.KnowledgeBaseId = kbid;
+            base.KnowledgeBaseId = kbid;           
         }
         //public string InitialMessage;
 
