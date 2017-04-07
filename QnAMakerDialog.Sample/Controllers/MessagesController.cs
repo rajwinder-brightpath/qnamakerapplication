@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace QnAMakerDialog.Sample
 {
-    [BotAuthentication]
+   // [BotAuthentication]
     public class MessagesController : ApiController
     {
 

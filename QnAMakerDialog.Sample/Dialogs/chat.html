@@ -1,105 +1,46 @@
-﻿
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
-    <title>iframehide</title>
-    <!--<script type="text/javascript">
-		$(function(){
-			var f=$('#foo')
-			f.load(function(){
-				f.contents().find('div').hide();
-			})
-		})
-    </script>-->
-    
-</head>
-<body style="font-family:'Segoe UI'">
-    <h1>QnADialog.Sample</h1>
-    <p>Describe your bot here and your terms of use etc.</p>
-    <p>Visit <a href="https://www.botframework.com/">Bot Framework</a> to register your bot. When you register it, remember to set your bot's endpoint to <pre>https://<i>your_bots_hostname</i>/api/messages</pre></p>
-    <!--<div>
-        <iframe height="400px;" src="https://webchat.botframework.com/embed/qnaApplicationbot?s=TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I" style="left:0; background-color:white;"></iframe>
-    </div>-->
-   
-</body>
-</html>
+﻿<ul class="chat" id="conversation"></ul>
+<input id="input-text" type="text" />
+<button type="button" id="btn-send">Send</button>
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>
-        (function () {
-            var div = document.createElement("div");
-            document.getElementsByTagName('body')[0].appendChild(div);
-            div.outerHTML = "<div id='botDiv'class='iframeframe' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: white'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe id='BotChatElementid' width='400px' height='600px' src='https://webchat.botframework.com/embed/qnaApplicationbot?s=TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I'></iframe></div>";
-           
-            document.querySelector('body').addEventListener('click', function (e) {
-                e.target.matches = e.target.matches || e.target.msMatchesSelector;
-                if (e.target.matches('#botTitleBar')) {
-                    var botDiv = document.querySelector('#botDiv');
-                    botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
-                };
-            });
-        }());
+$('#btn-send').click(function () {
+    alert('s');
+    // Convert text to Message object
+    var message = {
+        text: $('#input-text').val(),
+        type: "Message",
+        recipient: "sss",
+        from:"bot"
+    };
 
-</script>
-<style type="text/css">
-    /*.iframeframe {
-        background-image: url("chat.jpg");
-        margin: 0;
-        padding: 0;
-        display: inline-block;
-         width: 600px;
-        height: 400px;
-    }*/
-    .wc-console input {
-        color:red !important;
-        border:2px solid red !important;
-    }
-</style>
-<script>
-    //document.getElementById("BotChatElementid").srcdoc = "<p>Some new content inside the iframe!</p>";
-    //var x = document.getElementById("BotChatElementid").src;
-    //var x = document.getElementById("BotChatElementid");
-    //var y = x.contentDocument;
-    //y.body.style.backgroundColor = "red";
-    //$(document).ready(function () {
-    //    $('#BotChatElementid').contents().find('body').html('<div> blah </div>');
-    //});
-    $(function () {
-        var f = $('#BotChatElementid')
-        f.load(function () {
-            f.contents().find('#BotChatElement .wc-console textarea').css('color', 'red');
-        })
-    })
-    //$(document).ready(function () {
-    //    $('#BotChatElement').find('.wc-console textarea, .wc-console input[type=text]').css('backgroundColor', 'red');
-    //});
-    //$('iframe').load(function () {
-    //    $('iframe').contents().find('input#mytitle').bind('change', function (e) { 
-    //        title_name = $(this).val();
-    //        $('input#edit-title').val(title_name);
-    //    });
-    //});
-  //  $("#iFrameID").contents().find("#BotChatElement").css('background-color', 'black');
-    //jQuery(".wc-console textarea, .wc-console input[type=text]")
-    //    .contents()
-    //    .find('input[type=text],select').css('backgroundColor', 'Yellow'); 
-       // .html('Click me for help!');
-    //$(document).ready(function () {
-    //    $('iframe').contents().find('body').css('backgroundColor', 'Yellow');
-    //});
-   // $("iframe").contents().find("element-selector").css("border-color", "blue");
-        //$("#BotChatElement").attr("input", "test");
-       // $("#BotChatElement").attr("placeholder", "1973");
-      //  ('iframe').contents().find('.wc-textbox').addClass("test");
-   
-    
-</script>
-<!--<script type="text/javascript">
-    $('.wc-textbox').on('click', function () {
-            $("#iframe_window").css('display', 'none');
-        });
-</script>-->
+    // Create outgoing message html and add to list
+    var htmlOutgoing = "<li>" + message.text + "</li>";
+    $('#conversation').append(htmlOutgoing);
+
+    $.ajax({
+        url: 'https://qnamakerapp.azurewebsites.net/api/message', // Change to your proper url
+        headers: {
+            "MicrosoftAppId":"197d4f74-1004-496a-9c15-2fb0d5d121a2",
+            "MicrosoftAppPassword":"KZO5f8ORYFrQUOWYXmmbmng"
+            // more as you need
+        },
+        dataType: "json",
+        type: "POST",
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(message),
+        async: true,
+        processData: false,
+        cache: false,
+        success: function (data) {
+            // Create incoming message html and add to list
+            var htmlIncoming = "<li>" + data.text + "</li>";
+            $('#conversation').append(htmlIncoming);
+        },
+        error: function (xhr) {
+            alert('error');
+        }
+    });
+
+    $('#text-input').val("");
+})</script>
