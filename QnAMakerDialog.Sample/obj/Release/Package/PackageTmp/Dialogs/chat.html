@@ -1,0 +1,43 @@
+﻿<ul class="chat" id="conversation"></ul>
+<input id="input-text" type="text" />
+<button type="button" id="btn-send">Send</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$('#btn-send').click(function () {
+    alert('s');
+    // Convert text to Message object
+    var message = {
+        text: $('#input-text').val(),
+        type: "Message",
+        recipient: "sss",
+        from:"bot"
+    };
+
+    // Create outgoing message html and add to list
+    var htmlOutgoing = "<li>" + message.text + "</li>";
+    $('#conversation').append(htmlOutgoing);
+
+    $.ajax({
+        url: 'https://qnamakerapp.azurewebsites.net/api/messages', // Change to your proper url
+        dataType: "json",
+        type: "POST",
+        contentType: 'application/json; charset=UTF-8',
+        data: JSON.stringify(message),
+        async: true,
+        processData: false,
+        cache: false,
+        success: function (data) {
+            console.log('success'.data);
+            // Create incoming message html and add to list
+            var htmlIncoming = "<li>" + data.text + "</li>";
+            $('#conversation').append(htmlIncoming);
+        },
+        error: function (xhr) {
+            console.log('error');
+            alert('error');
+        }
+    });
+
+    $('#text-input').val("");
+})</script>

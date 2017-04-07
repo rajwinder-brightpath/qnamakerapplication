@@ -9,9 +9,31 @@ $('#btn-send').click(function () {
     // Convert text to Message object
     var message = {
         text: $('#input-text').val(),
-        type: "Message",
-        recipient: "sss",
-        from:"bot"
+        type: "message",
+        locale: "en-Us",
+        id: "jeibafm2n4d786ei9",
+        channelID: "emulator",
+        serviceurl: "http://localhost:3979",
+        from: { "id":"12345", "name":"My Bot"},
+        recipient: { "id":"4494ki2bk55m8d99dc", "name":"Bot"},
+        conversation: { "id": "c26b80mnkj52fb3g7c", "topic": "awesome chat" },
+    channelData:
+    {
+        "method": "sendSticker",
+        "parameters":
+        {
+            "sticker":
+            {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/LittleCarron.gif",
+                "mediaType": "image/gif"
+            }
+        }
+    }
+        //type: "message",
+        //recipient: "sss",
+        //from: "bot",
+        //serviceurl: "http://localhost:3979/api/messages"
+
     };
 
     // Create outgoing message html and add to list
@@ -19,25 +41,22 @@ $('#btn-send').click(function () {
     $('#conversation').append(htmlOutgoing);
 
     $.ajax({
-        url: 'https://qnamakerapp.azurewebsites.net/api/message', // Change to your proper url
-        headers: {
-            "MicrosoftAppId":"197d4f74-1004-496a-9c15-2fb0d5d121a2",
-            "MicrosoftAppPassword":"KZO5f8ORYFrQUOWYXmmbmng"
-            // more as you need
-        },
+        url: 'http://localhost:3979/api/messages', // Change to your proper url
         dataType: "json",
         type: "POST",
-        contentType: 'application/json; charset=utf-8',
+        contentType: 'application/json; charset=UTF-8',
         data: JSON.stringify(message),
         async: true,
         processData: false,
         cache: false,
         success: function (data) {
+            console.log('success'.data);
             // Create incoming message html and add to list
             var htmlIncoming = "<li>" + data.text + "</li>";
             $('#conversation').append(htmlIncoming);
         },
         error: function (xhr) {
+            console.log('error');
             alert('error');
         }
     });

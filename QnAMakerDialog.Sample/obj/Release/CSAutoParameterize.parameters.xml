@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Default-Web.config Connection String" description="Default Connection String used in web.config by the application to access the database." defaultValue="Server=q2eumahwup.database.windows.net,1433; Database=QnaApplication; User ID=bpcdevtest@q2eumahwup;Password=bpcadmin@123;Trusted_Connection=False;Encrypt=True;Connection Timeout=180" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Desktop\\Downloads\\botframework-master\\botframework-master\\QnAMakerDialog\\QnAMakerDialog\.Sample\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Default']/@connectionString" />
+  </parameter>
+  <parameter name="QnaApplicationEntities-Web.config Connection String" description="QnaApplicationEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/qna.csdl|res://*/qna.ssdl|res://*/qna.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=q2eumahwup.database.windows.net,1433;initial catalog=QnaApplication;persist security info=True;user id=bpcdevtest@q2eumahwup;password=bpcadmin@123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Desktop\\Downloads\\botframework-master\\botframework-master\\QnAMakerDialog\\QnAMakerDialog\.Sample\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QnaApplicationEntities']/@connectionString" />
+  </parameter>
+</parameters>

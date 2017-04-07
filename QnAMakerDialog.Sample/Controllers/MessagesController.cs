@@ -27,8 +27,8 @@ namespace QnAMakerDialog.Sample
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
 
-            System.Web.Script.Serialization.JavaScriptSerializer json = new System.Web.Script.Serialization.JavaScriptSerializer();
-            string jsonstring =json.Serialize(activity);
+            //System.Web.Script.Serialization.JavaScriptSerializer json = new System.Web.Script.Serialization.JavaScriptSerializer();
+            //string jsonstring =json.Serialize(activity);
 
 
             //using (var db = new QnaApplicationEntities())
@@ -48,13 +48,15 @@ namespace QnAMakerDialog.Sample
                 try
                 {
                     ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                    Activity replyMessage = activity.CreateReply(jsonstring);
+                    Activity replyMessage = activity.CreateReply("sahil");
 
                     await connector.Conversations.ReplyToActivityAsync(replyMessage);
-                    //await Conversation.SendAsync(activity, MakeRoot);
+                  //  await Conversation.SendAsync(activity, MakeRoot);
                     
                 }
                 catch (Exception ex)
+
+
                 {
 
                 }

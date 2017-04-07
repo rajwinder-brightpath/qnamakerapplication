@@ -210,6 +210,8 @@
     <Content Include="qna.edmx.diagram">
       <DependentUpon>qna.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\QnAMakerApp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\QnAMakerApp - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -219,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,115 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+ 
+</head>
+<body style="font-family:'Segoe UI'">
+    <h1>QnADialog.Sample</h1>
+    <p>Describe your bot here and your terms of use etc.</p>
+    <p>Visit <a href="https://www.botframework.com/">Bot Framework</a> to register your bot. When you register it, remember to set your bot's endpoint to <pre>https://<i>your_bots_hostname</i>/api/messages</pre></p>
+    <iframe height="400px;" src="https://webchat.botframework.com/embed/qnaApplicationbot?s=TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I" style="left:0; background-color:white;"></iframe>
+   
+    <iframe id="iframe_window" style="visibility:visible;width: 400px; height: 525px; border: 1px solid rgb(214, 214, 214); right: 20px; bottom: -1px; display: none" onload="this.style.visibility = 'visible';" src="Your file url"></iframe>
+     <a class="load_chat" href="#">Chat with us</a>
+</body>
+</html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+
+</script>
+<script type="text/javascript">
+        $('.load_chat').on('click', function () {
+            $("#iframe_window").css('display', 'inline');
+        });
+</script>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+
+    </script> 
+    <script type="text/javascript">
+ function open_chatbox()
+ {
+ $('#chat').fadeOut(500);
+ $('#chatBox').fadeIn(1000);
+ }
+ function closeChat()
+ {
+ $('#chatBox').fadeOut(500);
+ $('#chat').fadeIn(1000);
+ }
+
+ //$('.wc - header').on('click', function () {
+ //    $('#chatBox').fadeOut(500);
+ //    $('#chat').fadeIn(1000);
+ //});
+    </script>
+    <style>
+        #chat {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            padding: 10px;
+            background: #088A68;
+            color: #EDEDED;
+            text-align: center;
+            font-family: Cambria;
+            font-size: 20px;
+            bottom: 0px;
+            right: 84px;
+            cursor: pointer;
+        }
+
+        #chatBox {
+            display: none;
+            position: absolute;
+            /*width: 200px;
+            height: 300px;*/
+            padding: 10px;
+            background: #EDEDED;
+            color: #FF7700;
+            text-align: center;
+            font-family: Cambria;
+            /*font-size: 20px;*/
+            bottom: 0px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        #close {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            padding: 6px 5px 10px 5px;
+            text-align: center;
+            background: rgba(0,0,0,0.8);
+            color: #FF7700;
+            font-family: Cambria;
+            right: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+   
+
+    <div id="chat" onClick="open_chatbox();"> Chat Now </div>
+    <div id="chatid" onClick="open_chatbox();" style="position: absolute;right: 30px;  bottom: 0px;"> <img src="Dialogs/chat.jpg" style="right: 30px;  bottom: 0px; height:45px; width:40px;"/> </div>
+    <div id="chatBox">
+        <div onclick="closeChat()" id="close">X</div> <br><br>
+        <iframe  height="400px;" 
+                src="https://webchat.botframework.com/embed/qnaApplicationbot?s=TLdb7UgLwk4.cwA.TPo.V2HzarmvrPI_4YiDZTmTIDUHrD6Sg5ck-wAR3pXcI8I"
+                 name="testgoogle" style="left:0; background-color:white;"></iframe>
+    </div>
+</body>
+
+</html>
+
+
+
+
